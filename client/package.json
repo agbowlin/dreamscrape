@@ -2,7 +2,7 @@
 	"name": "dreamscrape",
 	"dependencies":
 	{
-		"socket.io": ""
+		"socket.io-client": ""
 	}
 
 }
