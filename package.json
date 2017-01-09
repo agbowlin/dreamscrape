@@ -1,0 +1,55 @@
+{
+	"name": "dreamscrape",
+	"version": "0.01.000",
+	"homepage": "",
+	"description": "A dream R&D tool for web scraping.",
+	"authors": [
+		{
+			"name": "Andre G. Bowlin",
+			"email": "agbowlin@gmail.com",
+			"homepage": "http://liquicode.com"
+		}
+	],
+
+	"private": true,
+
+	"main": "dream.js",
+
+	"repository":
+	{},
+
+	"license": "MIT",
+
+	"keywords": [
+	],
+
+	"files": [
+		"package.json",
+		"bower.json",
+		"LICENSE",
+		"README.md",
+		"ottono-server.js",
+		"ottono-client.js",
+		"ottono-client.html"
+	],
+
+	"ignore": [
+		".*",
+		"bower_components",
+		"node_modules",
+		"build",
+		"out",
+		"test"
+	],
+
+	"dependencies":
+	{
+		"express": "",
+		"socket.io": "",
+		"string": ""
+	},
+
+	"devDependencies":
+	{}
+
+}
