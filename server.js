@@ -24,7 +24,6 @@ var npm_string = require('string');
 
 var NodeJS_Address = process.env.IP || "0.0.0.0";
 var NodeJS_Port = process.env.PORT || 3000;
-var SocketIO_Port = 3000;
 
 var ClientFolder = npm_path.resolve(__dirname, 'client');
 var ProjectsFolder = npm_path.resolve(__dirname, 'projects');
