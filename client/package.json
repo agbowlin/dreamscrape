@@ -1,0 +1,8 @@
+{
+	"name": "dreamscrape",
+	"dependencies":
+	{
+		"socket.io": ""
+	}
+
+}

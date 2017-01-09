@@ -1,0 +1,32 @@
+{
+	"name": "dreamscrape",
+	"version": "0.01.000",
+	"homepage": "",
+	"description": "A dream R&D tool for webscraping.",
+	"authors": [
+	{
+		"name": "Andre G. Bowlin",
+		"email": "agbowlin@gmail.com",
+		"homepage": "http://liquicode.com"
+	}],
+	"private": true,
+	"main": "client/index.html",
+	"moduleType": [
+		"globals"
+	],
+	"repository":
+	{},
+	"license": "MIT",
+	"keywords": [],
+	"ignore": [
+		".*",
+		"bower_components",
+		"node_modules"
+	],
+	"dependencies":
+	{
+		"jquery": "",
+		"bootstrap": "",
+		"angular": ""
+	}
+}
