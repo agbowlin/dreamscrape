@@ -13,7 +13,7 @@
 
 	"private": true,
 
-	"main": "dream.js",
+	"main": "server.js",
 
 	"repository":
 	{},
@@ -28,9 +28,11 @@
 		"bower.json",
 		"LICENSE",
 		"README.md",
-		"ottono-server.js",
-		"ottono-client.js",
-		"ottono-client.html"
+		"server.js",
+		"projectlib.js",
+		"client/*",
+		"engines/*"
+		"projects/*"
 	],
 
 	"ignore": [
