@@ -1,6 +1,6 @@
 {
     "name": "dreamscrape",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "homepage": "",
     "description": "A dream R&D tool for web scraping.",
     "authors": [
@@ -24,7 +24,6 @@
     ],
     "files": [
         "client/*",
-        "engines/*",
         "projects/*",
         "LICENSE",
         "package.json",
@@ -35,6 +34,7 @@
     ],
     "ignore": [
         ".*",
+        "_deprecated/*",
         "members/*",
         "node_modules/",
         "projects/job.*/"

@@ -20,6 +20,9 @@ var npm_socketio = require('socket.io');
 
 var npm_string = require('string');
 
+var dreamscrape = require('liquicode_dreamscrape');
+dreamscrape.engines_folder = "node_modules/liquicode_dreamscrape/engines";
+
 // Settings
 
 var NodeJS_Address = process.env.IP || "0.0.0.0";
@@ -290,7 +293,8 @@ SocketIo.on('connection',
 					// Generate the script.
 					var project_compile = {};
 					project_compile.project_name = project.project_name;
-					project_compile.project_script = ProjectLib.GenerateScript(project.project_steps);
+					// project_compile.project_script = ProjectLib.GenerateScript(project.project_steps);
+					project_compile.project_script = dreamscrape.CompileSteps(project.project_steps);
 
 					Socket.emit('project_compile_response', project_compile);
 				}
@@ -310,17 +314,53 @@ SocketIo.on('connection',
 				try
 				{
 					// Run the job.
-					ProjectLib.RunProject(project,
-						function OnStart(ProjectJob)
+					// ProjectLib.RunProject(project,
+					// 	function OnStart(ProjectJob)
+					// 	{
+					// 		// Let the client know that we are working on the request.
+					// 		Socket.emit('project_run_response', ProjectJob);
+					// 	},
+					// 	function OnFinish(ProjectJob)
+					// 	{
+					// 		// Let the client know that we are done.
+					// 		Socket.emit('project_run_finished', ProjectJob);
+					// 	});
+
+					var project_job = {};
+					project_job.job_id = Date.now();
+					project_job.time_started = project_job.job_id;
+					project_job.project_name = project.project_name;
+					project_job.project_steps = project.project_steps;
+
+					var job_folder = ProjectLib.GetJobFolder(project_job.project_name, project_job.job_id);
+					npm_fs.mkdirSync(job_folder);
+
+					dreamscrape.RunSteps(
+						project_job.project_steps,
+						job_folder,
+						function OnStart(Job)
 						{
+							// Translate the result.
+							project_job.project_script = Job.job_script;
 							// Let the client know that we are working on the request.
-							Socket.emit('project_run_response', ProjectJob);
+							Socket.emit('project_run_response', project_job);
 						},
-						function OnFinish(ProjectJob)
+						function OnError(Err) {},
+						function OnFinish(Job)
 						{
+							// Translate the result.
+							project_job.time_finished = Job.time_finished;
+							project_job.seconds_elapsed = Job.seconds_elapsed;
+							project_job.stdout = Job.stdout;
+							project_job.stderr = Job.stderr;
+							project_job.artifacts = Job.artifacts;
+							// Save the job.
+							var project_job_filename = npm_path.join(job_folder, '_project_job.json');
+							npm_fs.writeFileSync(project_job_filename, JSON.stringify(project_job, null, 4));
 							// Let the client know that we are done.
-							Socket.emit('project_run_finished', ProjectJob);
+							Socket.emit('project_run_finished', project_job);
 						});
+
 				}
 				catch (err)
 				{

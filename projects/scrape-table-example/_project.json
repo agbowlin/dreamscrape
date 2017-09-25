@@ -1,5 +1,5 @@
 {
     "project_name": "scrape-table-example",
-    "project_steps": "# debug: true\nurl: http://www.w3schools.com/html/html_tables.asp\nwaitfor: table#customers | 3 seconds\n\n#TODO:  this function needs to get fixed so that \n#       it returns a 2-dimensional array.\n#scrapetable: table#customers | customers\nscrapetable: div.w3-example table | customers\n\n# snapshot: 000-table\n",
+    "project_steps": "# debug: true\nurl: http://www.w3schools.com/html/html_tables.asp\nwaitfor: table#customers | 3 seconds\n\n#TODO:  this function needs to get fixed so that \n#       it returns a 2-dimensional array.\n#scrapetable: table#customers | customers\nscrapetable: div.w3-example table | customers\n\nsnapshot: 000-table\n",
     "project_script": ""
 }
