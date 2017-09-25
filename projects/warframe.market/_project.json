@@ -1,0 +1,5 @@
+{
+    "project_name": "warframe.market",
+    "project_steps": "#debug: true\n\n#=== Go to the market page.\nurl: http://warframe.market\nwaitfor: input#search-item | 3 seconds\nsnapshot: 000-market-page\n\n#=== Submit a search query.\nsendtext: input#search-item | Sicarus Prime Set\nsendkey: input#search-item | Down\nsendkey: input#search-item | Enter\nsnapshot: 010-market-query\n\n#=== Do the search.\nsendkey: span button | Enter\nwaitfor: #sell-table | 3 seconds\nsnapshot: 100-market-results\n\n#=== Scrape some results.\nscrapetable: #sell-table | items\n\n#end of script\n",
+    "project_script": ""
+}

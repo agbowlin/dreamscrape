@@ -1,5 +1,5 @@
 {
-    "project_name": "Default",
-    "project_steps": "#debug: true\n\n#=== Go to the search page.\nurl: http://yahoo.com\nwaitfor: input#uh-search-box | 3 seconds\nsnapshot: 000-search-page\n\n#=== Submit a search query.\nsendtext: input#uh-search-box | You're a Peach!\nsnapshot: 010-search-query\n\n#=== Do the search.\nsendkey: input#uh-search-box | Enter\n# waitfor: div#results | 3 seconds\nwaitfor: div#results div#pagination | 3 seconds\nsnapshot: 100-search-results\n\n#=== Scrape some results.\nscrapetext: input#yschsp.sbq | search_text\nscrapearray: a.ac-algo | href | links\n\n#end of script\n",
-    "project_script": ""
+	"project_name": "Default",
+	"project_steps": "#debug: true\n\n#=== Go to the search page.\nurl: http://yahoo.com\nwaitfor: input#uh-search-box | 3 seconds\nsnapshot: 000-search-page\n\n#=== Submit a search query.\nsendtext: input#uh-search-box | You're a Peach!\nsnapshot: 010-search-query\n\n#=== Do the search.\nsendkey: input#uh-search-box | Enter\n# waitfor: div#results | 3 seconds\nwaitfor: div#results div#pagination | 3 seconds\nsnapshot: 100-search-results\n\n#=== Scrape some results.\nscrapetext: input#yschsp.sbq | search_text\nscrapearray: a.ac-algo | href | links\n\n#end of script\n",
+	"project_script": ""
 }

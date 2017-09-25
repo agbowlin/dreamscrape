@@ -1,57 +1,52 @@
 {
-	"name": "dreamscrape",
-	"version": "0.01.000",
-	"homepage": "",
-	"description": "A dream R&D tool for web scraping.",
-	"authors": [
-		{
-			"name": "Andre G. Bowlin",
-			"email": "agbowlin@gmail.com",
-			"homepage": "http://liquicode.com"
-		}
-	],
+    "name": "dreamscrape",
+    "version": "0.0.2",
+    "homepage": "",
+    "description": "A dream R&D tool for web scraping.",
+    "authors": [
+        {
+            "name": "Andre G. Bowlin",
+            "email": "agbowlin@gmail.com",
+            "homepage": "http://liquicode.com"
+        }
+    ],
+    "private": true,
+    "main": "server.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/agbowlin/dreamscrape.git"
+    },
+    "license": "MIT",
+    "keywords": [
+        "scrape",
+        "scraping",
+        "casperjs"
+    ],
+    "files": [
+        "client/*",
+        "engines/*",
+        "projects/*",
+        "LICENSE",
+        "package.json",
+        "projectlib.js",
+        "README.md",
+        "server.js",
+        "VERSION"
+    ],
+    "ignore": [
+        ".*",
+        "members/*",
+        "node_modules/",
+        "projects/job.*/"
+    ],
+    "dependencies": {
+        "express": "",
+        "socket.io": "",
+        "string": "",
+        "liquicode_membership": "",
+        "liquicode_dreamscrape": ""
+    },
+    "devDependencies": {
 
-	"private": true,
-
-	"main": "server.js",
-
-	"repository":
-	{},
-
-	"license": "MIT",
-
-	"keywords": [
-	],
-
-	"files": [
-		"package.json",
-		"bower.json",
-		"LICENSE",
-		"README.md",
-		"server.js",
-		"projectlib.js",
-		"client/*",
-		"engines/*"
-		"projects/*"
-	],
-
-	"ignore": [
-		".*",
-		"bower_components",
-		"node_modules",
-		"build",
-		"out",
-		"test"
-	],
-
-	"dependencies":
-	{
-		"express": "",
-		"socket.io": "",
-		"string": ""
-	},
-
-	"devDependencies":
-	{}
-
+    }
 }
